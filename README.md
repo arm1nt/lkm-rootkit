@@ -1,6 +1,6 @@
 # lkm-rootkit
 
-**For academic purposes only.**
+**POC rootkit for academic purposes only.**
 
 Developed against Linux Kernel v. 6.2 ---- WIP
 
