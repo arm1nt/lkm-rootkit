@@ -42,6 +42,8 @@ static void un_hide_me(void)
     //add to module list, so the module can be seen again and also removed with rmmod.
     list_add(&THIS_MODULE->list, prev);
 
+    //Todo: restore the rest
+
     THIS_MODULE->state = MODULE_STATE_LIVE;
 }
 
