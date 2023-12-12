@@ -1,3 +1,3 @@
 # lkm-rootkit
 
-**POC rootkit for academic purposes only.**
+**WIP - POC rootkit for academic purposes only.**
